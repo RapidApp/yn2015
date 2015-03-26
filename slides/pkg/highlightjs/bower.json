@@ -1,0 +1,23 @@
+{
+  "name": "highlightjs",
+  "version": "7.5.0",
+  "main": [
+    "highlight.pack.js",
+    "styles/default.css"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor",
+    "components"
+  ],
+  "gitHead": "b6a3df8e9ab41b33dfd574be2d9b42fef0bc10d8",
+  "readme": "Highlight.js\n============\n\nShim repository for [Highlight.js](http://highlightjs.org/).\n\nPackage Managers\n----------------\n\n* [Bower](http://bower.io): `highlightjs`\n* [Composer](http://packagist.org/packages/components/highlightjs): `components/highlightjs`\n* [Component](http://component.io): `components/highlightjs`\n",
+  "readmeFilename": "README.md",
+  "_id": "highlightjs@7.5.0",
+  "description": "Highlight.js ============",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/components/highlightjs.git"
+  }
+}
