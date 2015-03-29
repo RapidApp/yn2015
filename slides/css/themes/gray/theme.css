@@ -79,3 +79,19 @@
 	}
 
 }
+
+
+.slide ul > li > ul {
+  list-style-type: none;
+  font-size: 70%;
+  margin-top: .6em;
+  line-height: 70%;
+}
+
+.slide ul > li > ul > li {
+  line-height: .6em;
+}
+
+.slide ul > li > ul > li::before { 
+  content:"\00BB  "; 
+}
