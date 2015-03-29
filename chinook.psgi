@@ -8,7 +8,8 @@ use FindBin '$Bin';
 use Rapi::Demo::Chinook::Model::DB;
 Rapi::Demo::Chinook::Model::DB
   ->config
-  ->{RapidDbic}{grid_params}{Track}{persist_immediately}
+  ->{RapidDbic}{grid_params}{Track}
+  ->{persist_immediately}
   ->{update} = 1;
 
 
