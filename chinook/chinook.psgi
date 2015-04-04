@@ -2,7 +2,9 @@ use strict;
 use warnings;
 
 use Rapi::Demo::Chinook 1.01;
-use FindBin '$Bin';
+
+use Path::Class qw/file dir/;
+my $Bin = file($0)->parent->stringify; # Like FindBin but safer
 
 # Make an inline cfg change:
 use Rapi::Demo::Chinook::Model::DB;
