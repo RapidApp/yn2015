@@ -14,7 +14,13 @@ Rapi::Demo::Chinook::Model::DB
 
 
 my $app = Rapi::Demo::Chinook->new({
-  chinook_db => "$Bin/chinook.db"
+  chinook_db => "$Bin/chinook.db",
+  plugins => [qw/RapidApp::RapidDbic RapidApp::NavCore/],
+  config  => { 
+    'Model::RapidApp::CoreSchema' => {
+      sqlite_file => "$Bin/ra_coreschema.db"
+    }
+  }
 });
 
 # Always start from db in its default state:
