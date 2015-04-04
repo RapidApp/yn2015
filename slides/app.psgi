@@ -1,11 +1,13 @@
 use strict;
 use warnings;
 
-use FindBin '$Bin';
+use Path::Class qw/file dir/;
+my $Bin = file($0)->parent->stringify; # Like FindBin
+
 use Plack::App::File;
 use Plack::Builder;
 
-my $app = Plack::App::File->new( root => "$Bin/slides" )->to_app; 
+my $app = Plack::App::File->new( root => "$Bin" )->to_app; 
 
 builder {
 
