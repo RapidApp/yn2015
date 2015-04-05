@@ -4,7 +4,7 @@ use Path::Class qw/file dir/;
 my $Bin = file($0)->parent->stringify; # Like FindBin
 
 my $for  = '/slides/slides.html';
-my $path = "$Bin/slides/parts";
+my $path = "$Bin/slides";
 
 sub {
   my $app = shift;
@@ -12,15 +12,17 @@ sub {
     my $env = shift;
     if ($for && $env->{PATH_INFO} eq $for) {
       my $slidedir = dir( $path )->resolve;
-
-      my $html = '';
+      
+      my @files = ();
       $slidedir->recurse(
         preorder => 1, depth_first => 1,
         callback => sub {
           my $File = shift;
-          $html .= $File->slurp if (-f $File);
+          push @files, $File if (-f $File);
         }
       );
+      
+      my $html = join('', map { $_->slurp } sort @files);
 
       return [ 200 => [
         'Content-Type'   => 'text/html; charset=utf-8',
