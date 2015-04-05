@@ -1,5 +1,3 @@
-use strict;
-
 use Path::Class qw/file dir/;
 my $Bin = file($0)->parent->stringify; # Like FindBin
 
@@ -13,5 +11,5 @@ builder {
   mount '/fs/'      => load_psgi("$Bin/fs.psgi");
   
   # Redirect root requests to the slideshow:
-  mount '/' => sub { [ 307 => ['Location' => "/slides/"], [] ] };
+  mount '/' => sub { [ 307, ['Location', "/slides/"], [] ] };
 };
