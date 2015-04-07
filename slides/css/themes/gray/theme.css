@@ -92,13 +92,26 @@
   line-height: .6em;
 }
 
-.slide ul > li > ul > li::before { 
-  content:"\00BB  "; 
-}
-
 
 /* Extra customizations */
 
+.slide ul > li > ul > li::before { 
+  content:"\00BB\0000a0"; 
+}
+
 .slide a {
   text-decoration: none;
+}
+
+.slide code {
+  background-color: #f9f2f4;
+  border-radius: 4px;
+  color: #c7254e;
+  font-size: 90%;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+.slide code, pre {
+  font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
 }
