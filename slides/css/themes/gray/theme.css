@@ -115,3 +115,40 @@
 .slide code, pre {
   font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
 }
+
+.slide .thispsgi > div.fn {
+  font-size:.5em;
+  padding-left: 5px;
+  height:25px;
+}
+
+.slide .thispsgi > div.code-wrap {
+  height: 460px;
+  width: 750px;
+  border: 3px solid transparent;
+}
+
+.slide .thispsgi > div.code-wrap.highlight {
+  border: 3px solid crimson;
+}
+
+.slide .thispsgi > div.code-wrap > iframe {
+  height: 100%;
+  width: 100%;
+}
+
+.slide .thispsgi > div.foot {
+  height: 35px;
+  padding-left: 30px;
+  color: crimson;
+  font-size: .5em;
+}
+
+.slide .thispsgi > div.foot > .arrow { 
+  font-size: 1.4em;
+}
+.slide .thispsgi > div.foot > .arrow::before { 
+  content:"\21E7"; 
+}
+
+
