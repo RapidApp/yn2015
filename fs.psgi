@@ -1,17 +1,13 @@
-use Path::Class qw/file dir/;
-my $Bin = file($0)->parent->stringify; # Like FindBin
-
 use Rapi::Fs 1.101;
 
-my $app = Rapi::Fs->new({
-  mounts => [{
-    name => 'approot',
-    args => $Bin
-  }]
-});
+use Path::Class 'file'; require Module::Locate;
+my $Bin  = file($0)->parent->stringify; # Like FindBin
+my $pmf  = Module::Locate::locate('Rapi::Fs');
+my $plib = file( $pmf )->parent->parent->stringify;
 
-# Smaller navtree width from the default 230
-$app->config->{'Plugin::RapidApp::TabGui'}
-  ->{navtree_init_width} = 160;
+my $app = Rapi::Fs->new({ mounts => [
+  { name => 'approot',  args => "$Bin"  },
+  { name => 'perllib',  args => "$plib" }
+]});
 
 $app->to_app
