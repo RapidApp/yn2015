@@ -6,9 +6,11 @@
 
 @import "../basic.css";
 
+/*
 .slide-view-module {
 	margin-top: 3em;
 }
+*/
 
 .slide {
 	font-size: 250%;
@@ -95,6 +97,10 @@
 
 /* Extra customizations */
 
+.slide .slide-std {
+  padding-top: 48px;
+}
+
 .slide ul > li > ul > li::before { 
   content:"\00BB\0000a0"; 
 }
@@ -150,5 +156,7 @@
 .slide .codeview > div.foot > .arrow::before { 
   content:"\21E7"; 
 }
+
+
 
 
