@@ -3,7 +3,7 @@ use strict;
 use Path::Class qw/file dir/;
 my $Bin = file($0)->parent->stringify; # Like FindBin but safer
 
-use Rapi::Demo::Chinook 1.01;
+use Rapi::Demo::Chinook 1.02;
 
 # Make an inline cfg change:
 use Rapi::Demo::Chinook::Model::DB;
