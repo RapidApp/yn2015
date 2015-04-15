@@ -128,7 +128,7 @@
   height:25px;
 }
 
-.slide .codeview > div.code-wrap {
+.slide .codeview div.code-wrap {
   height: 460px;
   width: 800px;
   border: 3px solid transparent;
@@ -138,7 +138,7 @@
   border: 3px solid crimson;
 }
 
-.slide .codeview > div.code-wrap > iframe {
+.slide .codeview div.code-wrap > iframe {
   height: 100%;
   width: 100%;
 }
@@ -157,6 +157,19 @@
   content:"\21E7"; 
 }
 
+.slide .codeview div.links {
+  font-size: 16px;
+  padding-left:10px;
+  padding-top:15px;
+}
 
+.slide .codeview div.links * {
+  color: #2f9c0a;
+  font-family: Consolas,Monaco,"Andale Mono",monospace;
+  line-height:2em;
+
+}
+
+.slide .codeview div.links a:hover { color: #036; }
 
 
