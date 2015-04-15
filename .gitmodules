@@ -1,3 +1,4 @@
 [submodule "BlueBox"]
-   path = BlueBox
-   url  = https://github.com/vanstyn/BlueBox.git
+   path   = BlueBox
+   url    = https://github.com/vanstyn/BlueBox.git
+   ignore = dirty
