@@ -129,7 +129,7 @@
 }
 
 .slide .codeview div.code-wrap {
-  height: 460px;
+  height: 510px;
   width: 800px;
   border: 3px solid transparent;
 }
@@ -159,7 +159,7 @@
 
 .slide .codeview div.links {
   font-size: 16px;
-  padding-left:20px;
+  padding-left:10px;
   padding-top:35px;
 }
 

@@ -8,8 +8,7 @@ sub {
     my $env = shift;
     if ($for && $env->{PATH_INFO} eq $for) {
       my @files = (); my $slidedir = dir( $path )->resolve;
-      $slidedir->recurse( 
-        preorder => 1, depth_first => 1,
+      $slidedir->recurse( preorder => 1, depth_first => 1,
         callback => sub { push @files, $_[0] if (-f $_[0]); }
       );
       my $html = join('', map { $_->slurp } sort @files);
