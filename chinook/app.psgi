@@ -1,9 +1,7 @@
-use strict;
-
-use Path::Class qw/file dir/;
-my $Bin = file($0)->parent->stringify; # Like FindBin but safer
-
 use Rapi::Demo::Chinook 1.02;
+
+use Path::Class 'file'; 
+my $Bin = file($0)->parent; # Like FindBin
 
 # Make an inline cfg change:
 use Rapi::Demo::Chinook::Model::DB;
@@ -13,14 +11,10 @@ Rapi::Demo::Chinook::Model::DB->config->{RapidDbic}
 my $app = Rapi::Demo::Chinook->new({
   chinook_db => "$Bin/chinook.db",
   plugins => [qw/RapidApp::RapidDbic RapidApp::NavCore/],
-  config  => { 
-    'Model::RapidApp::CoreSchema' => {
-      sqlite_file => "$Bin/ra_coreschema.db"
-    }
-  }
+  config  => { 'Model::RapidApp::CoreSchema' => {
+    sqlite_file => "$Bin/ra_coreschema.db"
+  }}
 });
-
-# Always start from db in its default state:
-$app->init_db(1);
+$app->init_db(1); # always reset db 
 
 $app->to_app

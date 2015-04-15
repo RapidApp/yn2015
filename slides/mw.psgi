@@ -1,36 +1,23 @@
-# Custom middleware to join multiple files into one
+# Custom middleware joins multiple files into one
+use Path::Class 'file'; my $Bin = file($0)->parent;
+my ($path,$for) = ("$Bin/slides",'/slides/slides.html');
 
-use Path::Class qw/file dir/;
-my $Bin = file($0)->parent->stringify; # Like FindBin
-
-my $for  = '/slides/slides.html';
-my $path = "$Bin/slides";
-
-sub {
+sub { 
   my $app = shift;
   sub {
     my $env = shift;
     if ($for && $env->{PATH_INFO} eq $for) {
-      my $slidedir = dir( $path )->resolve;
-      
-      my @files = ();
-      $slidedir->recurse(
+      my @files = (); my $slidedir = dir( $path )->resolve;
+      $slidedir->recurse( 
         preorder => 1, depth_first => 1,
-        callback => sub {
-          my $File = shift;
-          push @files, $File if (-f $File);
-        }
+        callback => sub { push @files, $_[0] if (-f $_[0]); }
       );
-      
       my $html = join('', map { $_->slurp } sort @files);
-
-      return [ 200 => [
-        'Content-Type'   => 'text/html; charset=utf-8',
+      return [ 200 => [ 'Cache-Control'  => 'no-cache',
         'Content-Length' => length($html),
-        'Cache-Control'  => 'no-cache'
+        'Content-Type'   => 'text/html; charset=utf-8'
       ], [ $html ] ]
     }
-    
     $app->($env)
   }
 }
