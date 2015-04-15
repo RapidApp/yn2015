@@ -1,15 +1,16 @@
 cpm2015
 =======
 
-"RapidApp fun" presentation for Cincinnati Perl Mongers (cinci.pm),
-April 8, 2015
+"Fun with RapidApp" presentation for Brew City Perl Mongers (Milwaukee.pm),
+April 16, 2015
 
 ## usage
 
 ```bash
 # Clone the repo:
-git clone https://github.com/RapidApp/cpm2015
+git clone -b bcpm2015 https://github.com/RapidApp/cpm2015
 cd cpm2015/
+git submodule update --init
 
 # Install required packages:
 cpanm --installdeps .
