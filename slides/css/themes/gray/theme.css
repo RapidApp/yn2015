@@ -172,4 +172,8 @@
 
 .slide .codeview div.links a:hover { color: #036; }
 
+.codelink {
+  font-family: Consolas,Monaco,"Andale Mono",monospace;
+}
+
 
