@@ -1,5 +1,5 @@
 # Custom middleware joins multiple files into one
-use Path::Class 'file'; my $Bin = file($0)->parent;
+use Path::Class qw/file dir/; my $Bin = file($0)->parent;
 my ($path,$for) = ("$Bin/slides",'/slides/slides.html');
 
 sub { 
