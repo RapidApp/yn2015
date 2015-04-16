@@ -15,7 +15,7 @@ git submodule update --init
 # Install required packages:
 cpanm --installdeps .
 
-# Start-up app.psgi:
+# Start-up app.psgi web-server on local port 5000:
+# (Note: use forward/back arrow keys to advance slides)
 plackup
-
 ```
