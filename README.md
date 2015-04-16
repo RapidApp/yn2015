@@ -1,4 +1,4 @@
-cpm2015
+mpm2015
 =======
 
 "Fun with RapidApp" presentation for Brew City Perl Mongers (Milwaukee.pm),
@@ -8,8 +8,8 @@ April 16, 2015
 
 ```bash
 # Clone the repo:
-git clone -b bcpm2015 https://github.com/RapidApp/cpm2015
-cd cpm2015/
+git clone https://github.com/RapidApp/mpm2015
+cd mpm2015/
 git submodule update --init
 
 # Install required packages:
