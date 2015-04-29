@@ -1,15 +1,15 @@
-mpm2015
-=======
+yn2015
+======
 
-"Fun with RapidApp" presentation for Brew City Perl Mongers (Milwaukee.pm),
-April 16, 2015
+"RapidApp by example - database web apps on steroids" 
+presentation for YAPC::NA 2015 (June 9, 2015 at 9AM)
 
 ## usage
 
 ```bash
 # Clone the repo:
-git clone https://github.com/RapidApp/mpm2015
-cd mpm2015/
+git clone https://github.com/RapidApp/yn2015
+cd yn2015/
 git submodule update --init
 
 # Install required packages:
