@@ -177,3 +177,9 @@
 }
 
 
+.intro-slide {
+  height: 550px;
+  width: 800px;
+  background-image: url(../../../img/intro_background.png);
+
+}
