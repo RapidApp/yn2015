@@ -234,3 +234,15 @@
 .slide .center {
   text-align:center;
 }
+
+/* just for dev, draw a box to show 720P res (720x1152) 
+   borders for MacBook running Firefix in full-screen mode  */
+#slide-container {
+  border: 1px solid #D0D0D0;
+  border-top-width:0px;
+  border-left-width:0px;
+  height: 640px; /* 80px taken up by FF address bar, tabs, etc */
+  width: 1151px;
+}
+
+
