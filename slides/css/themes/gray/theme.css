@@ -235,6 +235,26 @@
   text-align:center;
 }
 
+.slide .indented {
+  padding-left: 75px;
+}
+
+.slide .indented.deep {
+  padding-left: 175px;
+}
+
+.slide .lowered {
+  padding-top: 70px;
+}
+
+.slide .lowered.some {
+  padding-top: 25px;
+}
+
+.slide .lowered.lots {
+  padding-top: 195px;
+}
+
 /* just for dev, draw a box to show 720P res (720x1152) 
    borders for MacBook running Firefix in full-screen mode  */
 #slide-container {
