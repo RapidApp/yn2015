@@ -124,6 +124,10 @@
   padding-top: 48px;
 }
 
+.slide .slide-tall {
+  padding-top: 15px;
+}
+
 .slide ul > li > ul > li::before { 
   content:"\00BB\0000a0"; 
 }
@@ -217,10 +221,16 @@
   color:green;
 }
 
-
 .slide .i-txt.em, 
 .slide .m-txt.em {
   font-weight:bold;
   font-size:1.2em;
 }
 
+.slide .right {
+  text-align:right;
+}
+
+.slide .center {
+  text-align:center;
+}
