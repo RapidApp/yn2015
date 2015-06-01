@@ -26,9 +26,32 @@
 }
 
 .slide h2 {
-	color: #444;
 	margin-top: 0;
 	margin-left: .5em;
+}
+
+.slide h2, 
+.slide h3, 
+.slide h4, 
+.slide h5, 
+.slide h6 {
+  color: #444;
+}
+
+.slide h3 {
+  font-size: 90%;
+}
+
+.slide h4 {
+  font-size: 80%;
+}
+
+.slide h5 {
+  font-size: 70%;
+}
+
+.slide h6 {
+  font-size: 60%;
 }
 
 .slide p {
@@ -183,3 +206,21 @@
   background-image: url(../../../img/intro_background.png);
 
 }
+
+
+
+.slide .m-txt {
+  color:orange;
+}
+
+.slide .i-txt {
+  color:green;
+}
+
+
+.slide .i-txt.em, 
+.slide .m-txt.em {
+  font-weight:bold;
+  font-size:1.2em;
+}
+
