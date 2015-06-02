@@ -284,3 +284,11 @@ div.iframe-address-box.for-codeview {
   margin: 0px 7px -8px 7px;
 }
 
+div.iframe-address-box .host {
+  opacity:0.5;
+}
+div.iframe-address-box .hash {
+  opacity:0.6;
+  color:maroon;
+}
+
