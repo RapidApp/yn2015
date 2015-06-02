@@ -235,6 +235,10 @@
   text-align:center;
 }
 
+.slide .center > *{
+  margin-left: 0px;
+}
+
 .slide .indented {
   padding-left: 75px;
 }
