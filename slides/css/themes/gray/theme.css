@@ -265,4 +265,22 @@
   width: 1151px;
 }
 
+div.iframe-address-box {
+  font-size: 12px;
+  height: 15px;
+  font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+  color:grey;
+  border: 1px solid #D0D0D0;
+  text-indent:10px;
+  padding:3px 3px 3px 18px;
+  background-position: 8px center;
+  background-repeat:no-repeat;
+  background-image: url(../../../img/lnk.png);
+  background-color: #FAF5E6;
+  font-style:italic;
+}
+
+div.iframe-address-box.for-codeview {
+  margin: 0px 7px -8px 7px;
+}
 
