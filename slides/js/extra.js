@@ -1,10 +1,12 @@
 
-function iFrameUpdAddrBox(show_parts) {
+function iFrameUpdAddrBox(show_parts,opts) {
 
   show_parts = show_parts || ['host','pathname','search','hash','reloader'];
+  opts = opts || {};
   
   var arr_contains = function(a, obj) {
     for (var i = 0; i < a.length; i++) {
+      if(a[i] == 'path') { a[i] = 'pathname'; } // treat 'path' as an alias for 'pathname'
       if (a[i] === obj) { return true; }
     }
     return false;
@@ -15,7 +17,19 @@ function iFrameUpdAddrBox(show_parts) {
     for (ndx = 0; ndx < props.length; ++ndx) {
       var key = props[ndx], val = loc[key];
       if(arr_contains(show_parts,key)) {
-        if(key == 'protocol') { val = val+'//'; }
+        if(key == 'protocol') { 
+          val = val+'//'; 
+        }
+        else if(key == 'pathname' && opts.relpath) {
+          var pth = opts.relpath;
+          // Allow leading/trailimg slashes to be implied
+          if(pth.slice(0,1)  != '/') { pth = '/'+pth; }
+          if(pth.slice(-1) != '/') { pth += '/'; }
+          var parts = val.split(pth);
+          if(parts.length == 2 && parts[0] == '') {
+            val = ' ' + parts[1];
+          }
+        }
         tags.push([
           '<span class="',key,'">',val,'</span>'
         ].join(''));
