@@ -1,5 +1,5 @@
 
-function iFrameUpdAddrBox(show_parts,opts) {
+function iFrameUpdAddrBox(show_parts,opts,hashchange) {
 
   if(!this.tagName || this.tagName.toLowerCase() != 'iframe') {
     return;
@@ -7,20 +7,21 @@ function iFrameUpdAddrBox(show_parts,opts) {
   
   // setup event listener/handler for the hash change event, since it does 
   // not trigger 'onload' (which is probably how we were called originally)
-  if(!this._addressbox_onhashchange) {
+  if(!hashchange) {
     var ifrm = this;
     var window = ifrm.contentWindow;
     var orig_listener = window.onhashchange || function(){};
-    ifrm._addressbox_onhashchange = function(){
+    window.onhashchange = function(){
       orig_listener.apply(this,arguments);
-      iFrameUpdAddrBox.call(ifrm,show_parts,opts);
+      iFrameUpdAddrBox.call(ifrm,show_parts,opts,true);
     }
-    
-    window.onhashchange = ifrm._addressbox_onhashchange;
   }
-
-  show_parts = show_parts || ['host','pathname','search','hash','reloader'];
+  
   opts = opts || {};
+  show_parts = show_parts || [
+    'host','pathname','search','hash',
+    'link','reloader'
+  ];
   
   var arr_contains = function(a, obj) {
     for (var i = 0; i < a.length; i++) {
@@ -64,6 +65,16 @@ function iFrameUpdAddrBox(show_parts,opts) {
     if(doc && doc.location && doc.location.href) {
     
       var html = htmlForLoc(doc.location);
+      
+      if(arr_contains(show_parts,'link')) {
+        html = ['<a ',
+          'class="link" target="_blank" ',
+          'title="Open URL in a new window" ',
+          'href="',doc.location.href,'"',
+          '>',html,'</a>'
+        ].join('');
+      }
+      
       if(arr_contains(show_parts,'reloader')) {
         html += ['<a ',
           'class="reloader" title="Reload the current iframe" ',

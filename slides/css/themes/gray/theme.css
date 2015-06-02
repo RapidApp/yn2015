@@ -314,3 +314,8 @@ div.iframe-address-box .reloader:hover {
   opacity:1.0;
 }
 
+div.iframe-address-box a.link:hover * {
+  color:#4169E1;
+  opacity:1.0;
+  text-decoration:underline;
+}
