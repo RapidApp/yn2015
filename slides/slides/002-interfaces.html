@@ -171,11 +171,13 @@
 <div class="slide-std">
   <h3>Multi-panel layouts</h3>
 
-  <iframe 
-    frameborder="0"
-    style="height:500px;width:860px;"
-    src="../fs#!/files/approot/slides/img/pm_logo.png"
-  ></iframe>
+  <div style="height:500px;width:860px;">
+    <div class="iframe-address-box"></div>
+    <iframe 
+      onload="iFrameUpdAddrBox.call(this)"
+      style="height:100%;width:100%;"
+      src="../fs#!/files/approot/slides/img/pm_logo.png"
+    ></iframe>
 
 </div>
 <hr>

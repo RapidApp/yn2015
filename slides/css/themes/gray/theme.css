@@ -279,7 +279,12 @@ div.iframe-address-box {
   background-image: url(../../../img/lnk.png);
   background-color: #FAF5E6;
   font-style:italic;
+  margin: 0px 0px -1px 0px;
 }
+
+/* Enforce a common text highlight color */
+div.iframe-address-box *::selection      { background:#1E90FF; }
+div.iframe-address-box *::-moz-selection { background:#1E90FF; }
 
 div.iframe-address-box.for-codeview {
   margin: 0px 7px -8px 7px;

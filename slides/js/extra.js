@@ -1,6 +1,24 @@
 
 function iFrameUpdAddrBox(show_parts,opts) {
 
+  if(!this.tagName || this.tagName.toLowerCase() != 'iframe') {
+    return;
+  }
+  
+  // setup event listener/handler for the hash change event, since it does 
+  // not trigger 'onload' (which is probably how we were called originally)
+  if(!this._addressbox_onhashchange) {
+    var ifrm = this;
+    var window = ifrm.contentWindow;
+    var orig_listener = window.onhashchange || function(){};
+    ifrm._addressbox_onhashchange = function(){
+      orig_listener.apply(this,arguments);
+      iFrameUpdAddrBox.call(ifrm,show_parts,opts);
+    }
+    
+    window.onhashchange = ifrm._addressbox_onhashchange;
+  }
+
   show_parts = show_parts || ['host','pathname','search','hash','reloader'];
   opts = opts || {};
   
@@ -38,26 +56,25 @@ function iFrameUpdAddrBox(show_parts,opts) {
     return tags.join('');
   };
 
-  if(this.tagName && this.tagName.toLowerCase() == 'iframe') {
-    // Looks for an element immediately before the 
-    // iframe with class="iframe-address-box"
-    var bEl = this.previousElementSibling;
-    if(bEl && bEl.classList && bEl.classList.contains('iframe-address-box')){
-      var doc = this.contentWindow || this.contentDocument;
-      if(doc && doc.location && doc.location.href) {
-      
-        var html = htmlForLoc(doc.location);
-        if(arr_contains(show_parts,'reloader')) {
-          html += ['<a ',
-            'class="reloader" title="Reload the current iframe" ',
-            'onclick="reloadNextiFrame.call(this)">',
-          '</a>'].join('');
-        }
-      
-        bEl.innerHTML = html;
+  // Looks for an element immediately before the 
+  // iframe with class="iframe-address-box"
+  var bEl = this.previousElementSibling;
+  if(bEl && bEl.classList && bEl.classList.contains('iframe-address-box')){
+    var doc = this.contentWindow || this.contentDocument;
+    if(doc && doc.location && doc.location.href) {
+    
+      var html = htmlForLoc(doc.location);
+      if(arr_contains(show_parts,'reloader')) {
+        html += ['<a ',
+          'class="reloader" title="Reload the current iframe" ',
+          'onclick="reloadNextiFrame.call(this)">',
+        '</a>'].join('');
       }
+    
+      bEl.innerHTML = html;
     }
   }
+  
 }
 
 // This is designed to work with the above iFrameUpdAddrBox() for the 'reloader'
