@@ -1,7 +1,7 @@
 
 function iFrameUpdAddrBox(show_parts) {
 
-  show_parts = show_parts || ['host','pathname','search','hash'];
+  show_parts = show_parts || ['host','pathname','search','hash','reloader'];
   
   var arr_contains = function(a, obj) {
     for (var i = 0; i < a.length; i++) {
@@ -31,7 +31,38 @@ function iFrameUpdAddrBox(show_parts) {
     if(bEl && bEl.classList && bEl.classList.contains('iframe-address-box')){
       var doc = this.contentWindow || this.contentDocument;
       if(doc && doc.location && doc.location.href) {
-        bEl.innerHTML = htmlForLoc(doc.location);
+      
+        var html = htmlForLoc(doc.location);
+        if(arr_contains(show_parts,'reloader')) {
+          html += ['<a ',
+            'class="reloader" title="Reload the current iframe" ',
+            'onclick="reloadNextiFrame.call(this)">',
+          '</a>'].join('');
+        }
+      
+        bEl.innerHTML = html;
+      }
+    }
+  }
+}
+
+// This is designed to work with the above iFrameUpdAddrBox() for the 'reloader'
+function reloadNextiFrame() {
+  if(this.parentElement) {
+    var nextEl = this.parentElement.nextElementSibling;
+    if(nextEl.tagName && nextEl.tagName.toLowerCase() == 'iframe') {
+      var doc = nextEl.contentWindow || nextEl.contentDocument;
+      if(doc && doc.location && doc.location.reload) {
+        var iframeDoc = nextEl.contentDocument || nextEl.contentWindow.document;
+        if(iframeDoc) {
+          // Just so we can see the content change
+          var reloadhtml = [
+            '<div style="height:',iframeDoc.body.clientHeight || 100,'px;',
+            'background-color:#F0F0F0;"></div>'
+          ].join('');
+          iframeDoc.body.innerHTML = reloadhtml;
+        }
+        doc.location.reload(true);
       }
     }
   }
