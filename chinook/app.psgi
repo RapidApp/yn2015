@@ -9,11 +9,7 @@ Rapi::Demo::Chinook::Model::DB->config->{RapidDbic}
   ->{grid_params}{Track}{persist_immediately}{update} = 1;
 
 my $app = Rapi::Demo::Chinook->new({
-  chinook_db => "$Bin/chinook.db",
-  plugins => [qw/RapidApp::RapidDbic RapidApp::NavCore/],
-  config  => { 'Model::RapidApp::CoreSchema' => {
-    sqlite_file => "$Bin/ra_coreschema.db"
-  }}
+  chinook_db => "$Bin/chinook.db"
 });
 $app->init_db(1); # always reset db 
 
