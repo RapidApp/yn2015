@@ -2,3 +2,8 @@
    path   = BlueBox
    url    = https://github.com/vanstyn/BlueBox.git
    ignore = dirty
+
+[submodule "CreatureZoo"]
+   path   = CreatureZoo
+   url    = git@github.com:RapidApp/Rapi-Demo-CreatureZoo.git
+   ignore = dirty
