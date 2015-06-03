@@ -273,6 +273,14 @@
   left:40px;
 }
 
+
+.slide div.outtro-small {
+  color:grey;
+  font-size:0.6em;
+  text-align:right;
+  padding-right:60px;
+}
+
 /*
 #slide-container {
   position:absolute;
