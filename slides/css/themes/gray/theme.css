@@ -259,9 +259,34 @@
   padding-top: 130px;
 }
 
-/* just for dev, draw a box to show 720P res (720x1152) 
+.slide .pinned-down-0 {
+  position:absolute;
+  right:0px;
+  bottom:0px;
+  left:0px;
+}
+
+.slide .pinned-down-25 {
+  position:absolute;
+  right:40px;
+  bottom:25px;
+  left:40px;
+}
+
+/*
+#slide-container {
+  position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
+}
+*/
+
+/* alternate, just for dev, draw a box to show 720P res (720x1152) 
    borders for MacBook running Firefix in full-screen mode  */
 #slide-container {
+  position:relative;
   border: 1px solid #D0D0D0;
   border-top-width:0px;
   border-left-width:0px;
