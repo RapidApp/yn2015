@@ -1,4 +1,4 @@
-use Rapi::Fs 1.101;
+use Rapi::Fs 1.104;
 
 use Path::Class 'file'; require Module::Locate;
 my $Bin  = file($0)->parent->stringify; # Like FindBin
