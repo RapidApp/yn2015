@@ -197,6 +197,33 @@
 
 }
 
+.slide .codeframe .crudmodes div.links a:hover,
+.slide .codeframe .crudmodes div.links a:hover * {
+  color:#4169E1; /* royalblue */
+}
+
+.slide .codeframe .crudmodes  div.links * {
+  font-size: 20px;
+}
+
+.slide .codeframe .crudmodes div.links i {
+  font-weight: bold;
+  font-size:1.2em;
+}
+
+.slide .codeframe .crudmodes div.links .true {
+  color: green;
+}
+
+.slide .codeframe .crudmodes div.links .false {
+  color: crimson;
+}
+
+.slide .codeframe .crudmodes div.links .mixed {
+  color: purple;
+}
+
+
 .slide .codeframe div.links a:hover { color: #036; }
 
 .codelink {

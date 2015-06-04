@@ -20,30 +20,35 @@
 
 
 <div class="codeframe slide-tall pinned-down-40">
-  <div class="centered" >
+  <div class="crudmodes centered" >
     
     <table style="width:100%;"><tr>
     
-      <td>
+      <td style="padding-left:30px;">
         <div style="height:500px;width:100%">
           <div class="iframe-address-box"></div>
           <iframe 
             onload="iFrameUpdAddrBox.call(this)"
             style="height:100%;width:100%;"
-            src="../czoo/rapidapp/module/direct/main/db/db_creature"
+            src="../crudmodes/rapidapp/module/direct/alpha_grid/"
+            name="codeframe"
           ></iframe>
         </div>
       </td>    
     
-      <td style="width:300px;padding:20px;">
-        <div class="links">
+      <td style="width:375px;padding:20px;font-size:1.5em;">
+        <div class="links" >
           <a target="codeframe"
-             href="../chinook/rapidapp/module/direct/main/db/db_track" 
-          >persist_immediately: true</a>
+             href="../crudmodes/rapidapp/module/direct/alpha_grid/" 
+          >persist_immediately: <i class="true">true</i></a>
           
           <a target="codeframe"
-             href="../chinook/rapidapp/module/direct/main/db/db_track" 
-          >persist_immediately: false</a>
+             href="../crudmodes/rapidapp/module/direct/alpha_grid_save/" 
+          >persist_immediately: <i class="false">false</i></a>
+          
+          <a target="codeframe"
+             href="../crudmodes/rapidapp/module/direct/alpha_grid_mixed/" 
+          >persist_immediately: <i class="mixed">mixed</i></a>
 
             
           </div>
