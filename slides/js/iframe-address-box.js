@@ -17,6 +17,24 @@ function iFrameUpdAddrBox(show_parts,opts,hashchange) {
     }
   }
   
+  
+  // This is common filler content we'll use in several places
+  if(!this.applyReloadContent) {
+    var iframe = this;
+    this.applyReloadContent = function(inner) {
+      var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+      inner = inner || '';
+      var html = [
+        '<body style="margin:0px;">',
+          '<div style="height:',(iframeDoc.body.clientHeight || 100)-2,'px;',
+          'background-color:#F8F8F8;border: 1px solid #d0d0d0;',
+          'color:#d0d0d0;font-family:sans-serif;',
+        '"><div style="margin:8px;">',inner,'</div></div></body>'
+      ].join('');
+      iframeDoc.body.outerHTML = html;
+    }
+  }
+  
   opts = opts || {};
   show_parts = show_parts || [
     'host','pathname','search','hash',
@@ -85,7 +103,11 @@ function iFrameUpdAddrBox(show_parts,opts,hashchange) {
       if(bEl.style.visibility == 'hidden' && doc.location.href != 'about:blank') {
         bEl.style.visibility = 'visible';
       }
-    
+      
+      if(doc.location.href == 'about:blank' && bEl.style.visibility != 'hidden') {
+        this.applyReloadContent();
+      }
+      
       bEl.innerHTML = html;
     }
   }
@@ -98,15 +120,12 @@ function reloadNextiFrame() {
     var nextEl = this.parentElement.nextElementSibling;
     if(nextEl.tagName && nextEl.tagName.toLowerCase() == 'iframe') {
       var doc = nextEl.contentWindow || nextEl.contentDocument;
-      if(doc && doc.location && doc.location.reload) {
-        var iframeDoc = nextEl.contentDocument || nextEl.contentWindow.document;
-        if(iframeDoc) {
-          // Just so we can see the content change
-          var reloadhtml = [
-            '<div style="height:',iframeDoc.body.clientHeight || 100,'px;',
-            'background-color:#F0F0F0;"></div>'
-          ].join('');
-          iframeDoc.body.innerHTML = reloadhtml;
+      if(doc && doc.location && doc.location.reload) {  
+        // Just so we can see the content change
+        if(nextEl.applyReloadContent) {
+          nextEl.applyReloadContent([
+            '<h1>Reloading...</h1>'
+          ].join(''));
         }
         doc.location.reload(true);
       }
