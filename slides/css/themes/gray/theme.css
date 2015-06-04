@@ -400,3 +400,16 @@ div.iframe-address-box a.link:hover * {
   opacity:1.0;
   text-decoration:underline;
 }
+
+
+.hidden-foot {
+  padding:25px;
+}
+
+.hidden-foot * {
+  visibility:hidden;
+}
+
+.hidden-foot:hover * {
+  visibility: visible;
+}
