@@ -81,6 +81,10 @@ function iFrameUpdAddrBox(show_parts,opts,hashchange) {
           'onclick="reloadNextiFrame.call(this)">',
         '</a>'].join('');
       }
+      
+      if(bEl.style.visibility == 'hidden' && doc.location.href != 'about:blank') {
+        bEl.style.visibility = 'visible';
+      }
     
       bEl.innerHTML = html;
     }
