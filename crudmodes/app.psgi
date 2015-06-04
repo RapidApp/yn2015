@@ -4,7 +4,7 @@ use Path::Class 'file';
 my $Bin = file($0)->parent; # Like FindBin
 
 my $app = Rapi::Demo::CrudModes->new(
-  data_dir       => "$Bin/crudmodes_data",
+  data_dir       => "$Bin/data",
   clear_data_dir => 1
 );
 

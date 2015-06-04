@@ -149,6 +149,8 @@
   font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
 }
 
+.sans { font-family: sans-serif !important; }
+
 .slide .codeview > div.head {
   font-size:.45em;
   padding-left: 12px;
@@ -186,8 +188,6 @@
 
 .slide .codeframe div.links {
   font-size: 16px;
-  padding-left:10px;
-  padding-top:35px;
 }
 
 .slide .codeframe div.links * {
@@ -241,11 +241,11 @@
 
 
 .slide .m-txt {
-  color:orange;
+  color:orange !important;
 }
 
 .slide .i-txt {
-  color:green;
+  color:green !important;
 }
 
 .slide .i-txt.em, 
@@ -323,7 +323,9 @@
 
 
 
-
+.size-dn {
+  font-size:0.9em !important;
+}
 
 
 /*
