@@ -120,6 +120,7 @@
 
 /* Extra customizations */
 
+
 .slide .slide-std {
   padding-top: 48px;
 }
@@ -305,6 +306,43 @@
 }
 
 
+.slide .abs { position:absolute; }
+.slide .abs .rel { position: relative; }
+
+.slide .max { left:0px; right: 0px; top:0px; bottom: 0px; }
+.slide .w0  { left:0px; right: 0px; }
+.slide .h0  { top:0px; bottom: 0px; }
+
+.slide .t20   { top: 20px;   }
+.slide .t50   { top: 50px;   }
+.slide .t80   { top: 80px;   }
+.slide .t100  { top: 100px;   }
+.slide .t120  { top: 120px;   }
+.slide .t150  { top: 150px;  }
+.slide .t150  { top: 160px;  }
+.slide .t250  { top: 250px;  }
+.slide .l200  { left: 200px; }
+.slide .r200  { right: 200px; }
+
+.slide .w40  { left: 40px; right: 40px; width: 751px;  }
+.slide .w200  { left: 200px; right: 200px;  }
+
+.slide .b100  { bottom: 100px; }
+
+.slide .w40 > iframe {
+  width: 1069px;
+}
+
+.slide .w200 > iframe {
+  width: 751px;
+}
+
+.slide .t150 > iframe {
+  height:425px;
+}
+
+
+
 .slide div.outtro-small {
   color:grey;
   font-size:0.6em;
@@ -416,3 +454,13 @@ div.iframe-address-box a.link:hover * {
 .hidden-foot:hover * {
   visibility: visible;
 }
+
+
+.p-t20 { padding-top:20px; }
+
+
+.m-out-50 {
+  margin-left: -50px;
+}
+
+
