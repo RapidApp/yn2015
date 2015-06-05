@@ -357,13 +357,16 @@ div.iframe-address-box {
   color:grey;
   border: 1px solid #D0D0D0;
   text-indent:10px;
-  padding:3px 3px 3px 18px;
+  padding:3px 22px 3px 18px;
   background-position: 8px center;
   background-repeat:no-repeat;
   background-image: url(../../../img/lnk.png);
   background-color: #FAF5E6;
   font-style:italic;
   margin: 0px 0px -1px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Enforce a common text highlight color */
