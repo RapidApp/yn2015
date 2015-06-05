@@ -227,10 +227,15 @@
 
 .slide .codeframe div.links a:hover { color: #036; }
 
-.codelink {
+.codelink, .mono {
   font-family: Consolas,Monaco,"Andale Mono",monospace;
 }
 
+.perl-pkg {
+  font-family: Consolas,Monaco,"Andale Mono",monospace;
+  color: #083772;
+  font-weight:bold;
+}
 
 .intro-slide {
   height: 550px;
@@ -249,8 +254,13 @@
   color:green !important;
 }
 
+.slide .p-txt {
+  color:blue !important;
+}
+
 .slide .i-txt.em, 
-.slide .m-txt.em {
+.slide .m-txt.em,
+.slide .p-txt.em {
   font-weight:bold;
   font-size:1.2em;
 }
@@ -359,6 +369,11 @@
   border-bottom: 1px solid #DDDDDD;
 }
 
+
+.slide .rt-borders {
+  border-top: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+}
 
 
 .size-dn {
