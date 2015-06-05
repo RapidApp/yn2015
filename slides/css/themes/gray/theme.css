@@ -375,6 +375,10 @@
   border-right: 1px solid #DDDDDD;
 }
 
+.slide .r-border {
+  border-right: 1px solid #DDDDDD;
+}
+
 
 .size-dn {
   font-size:0.9em !important;
@@ -478,4 +482,8 @@ div.iframe-address-box a.link:hover * {
   margin-left: -50px;
 }
 
+
+.slide a:hover * {
+  color:#4169E1; /* royalblue */
+}
 
