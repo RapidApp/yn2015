@@ -1,4 +1,12 @@
 
+// shortcut for common invocation:
+function iFrameAboxRel() {
+  return iFrameUpdAddrBox.call(
+    this, ['path','reloader'],
+    {relpath:'/fs/files/approot'}
+  );
+}
+
 function iFrameUpdAddrBox(show_parts,opts,hashchange) {
 
   if(!this.tagName || this.tagName.toLowerCase() != 'iframe') {

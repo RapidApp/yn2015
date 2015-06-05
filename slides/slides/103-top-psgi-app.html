@@ -1,12 +1,11 @@
 <div class="codeview" style="margin-left:-1.3em;">
-  <h3>PSGI structure</h3>
   
   <table><tr>
-    <td style="min-width:740px;height:600px;">
-      <div class="code-wrap" style="width:100%;height:100%;">
-        <div class="iframe-address-box for-codeview"></div>
+    <td style="min-width:740px;height:600px;padding-top:10px;">
+      <div class="code-wrap" style="width:100%;height:100%;padding-right:1px;">
+        <div class="iframe-address-box"></div>
         <iframe
-          onload="iFrameUpdAddrBox.call(this,['path','reloader'],{relpath:'/fs/files/approot'})"
+          onload="iFrameAboxRel.call(this)"
           src="../fs/files/approot/app.psgi?method=source"
           name="codeframe"
         ></iframe>
@@ -15,36 +14,54 @@
     
     </td>
     <td>
-      <div class="links">
-        <a target="codeframe"
-           href="../fs/files/approot/app.psgi?method=source" 
-        >app.psgi</a>
-        <div style="padding-left:25px">
+    
+      <div class="centered" style="padding-left:30px;padding-top:20px;">
+        <h5>PSGI structure</h5>
+        
+      
+        <div class="links">
           <a target="codeframe"
-           href="../fs/files/approot/slides/app.psgi?method=source" 
-          >slides/app.psgi</a><br>
+             href="../fs/files/approot/app.psgi?method=source" 
+          >app.psgi</a>
           <div style="padding-left:25px">
             <a target="codeframe"
-             href="../fs/files/approot/slides/mw.psgi?method=source" 
-            >slides/mw.psgi</a><br>
-          </div>
-          
-          <a target="codeframe"
-           href="../fs/files/approot/chinook/app.psgi?method=source" 
-          >chinook/app.psgi</a><br>
-          <a target="codeframe"
-           href="../fs/files/approot/BlueBox/app.psgi?method=source" 
-          >BlueBox/app.psgi</a><br>
-          <div style="padding-left:25px">
+             href="../fs/files/approot/slides/app.psgi?method=source" 
+            >slides/app.psgi</a><br>
+            <div style="padding-left:25px">
+              <a target="codeframe"
+               href="../fs/files/approot/slides/mw.psgi?method=source" 
+              >slides/mw.psgi</a><br>
+            </div>
+            
             <a target="codeframe"
-             href="../fs/files/approot/BlueBox/bluebox.psgi?method=source" 
-            >BlueBox/bluebox.psgi</a><br>
+             href="../fs/files/approot/chinook/app.psgi?method=source" 
+            >chinook/app.psgi</a><br>
+            
+            <a target="codeframe"
+             href="../fs/files/approot/crudmodes/app.psgi?method=source" 
+            >crudmodes/app.psgi</a><br>
+            
+            <a target="codeframe"
+             href="../fs/files/approot/BlueBox/app.psgi?method=source" 
+            >BlueBox/app.psgi</a><br>
+            
+            <div style="padding-left:25px">
+              <a target="codeframe"
+               href="../fs/files/approot/BlueBox/bluebox.psgi?method=source" 
+              >BlueBox/bluebox.psgi</a><br>
+            </div>
+            
+            <a target="codeframe"
+             href="../fs/files/approot/fs.psgi?method=source" 
+            >fs.psgi</a><br>
+            
+            <a target="codeframe"
+             href="../fs/files/approot/czoo.psgi?method=source" 
+            >czoo.psgi</a><br>
+            
           </div>
-          <a target="codeframe"
-           href="../fs/files/approot/fs.psgi?method=source" 
-          >fs.psgi</a><br>
         </div>
-      </div>
+       </div> 
     </td>
   
   </tr></table>

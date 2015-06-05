@@ -14,7 +14,7 @@ builder {
   mount '/slides/'    => load_psgi("$Bin/slides/app.psgi");
   mount '/chinook/'   => load_psgi("$Bin/chinook/app.psgi");
   mount '/crudmodes/' => load_psgi("$Bin/crudmodes/app.psgi");
-  #mount '/bluebox/'  => load_psgi("$Bin/BlueBox/app.psgi");
+  mount '/bluebox/'  => load_psgi("$Bin/BlueBox/app.psgi");
   mount '/fs/'        => load_psgi("$Bin/fs.psgi");
   mount '/czoo/'      => load_psgi("$Bin/czoo.psgi");
   

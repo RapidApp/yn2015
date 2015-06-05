@@ -187,6 +187,25 @@
   content:"\21E7"; 
 }
 
+.slide .codeview div.links {
+  font-size: 16px;
+
+}
+
+.slide .codeview div.links * {
+  color: #2f9c0a;
+  font-family: Consolas,Monaco,"Andale Mono",monospace;
+  line-height:2em;
+
+}
+
+.slide .codeview div.links a:hover { color: #036; }
+
+.codelink {
+  font-family: Consolas,Monaco,"Andale Mono",monospace;
+}
+
+
 .slide .codeframe div.links {
   font-size: 16px;
 }
