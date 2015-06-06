@@ -13,7 +13,7 @@ my $app = Rapi::Demo::CreatureZoo->new(
   data_dir  => "$Bin/CreatureZoo/creaturezoo_data",
   
   # Reset all data (db, templates,cas) every time
-  #clear_data_dir => 1
+  clear_data_dir => 1
 );
 
 # Plack/PSGI app:
