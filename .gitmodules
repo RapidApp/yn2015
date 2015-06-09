@@ -5,5 +5,5 @@
 
 [submodule "CreatureZoo"]
    path   = CreatureZoo
-   url    = git@github.com:RapidApp/Rapi-Demo-CreatureZoo.git
+   url    = https://github.com/RapidApp/Rapi-Demo-CreatureZoo.git
    ignore = dirty
