@@ -8,9 +8,8 @@ presentation for YAPC::NA 2015 (June 9, 2015 at 9AM)
 
 ```bash
 # Clone the repo:
-git clone https://github.com/RapidApp/yn2015
+git clone --recursive https://github.com/RapidApp/yn2015
 cd yn2015/
-git submodule update --init
 
 # Install required packages:
 cpanm --installdeps .
